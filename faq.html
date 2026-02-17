@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions - Global Visa Guide</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            padding: 25px;
+            background-color: white;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: var(--light-bg);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--primary-color);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: var(--light-bg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+        }
+        
+        .answer-content {
+            padding: 25px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        .answer-content ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .answer-content li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-passport"></i>
+                <span>Global Visa Guide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#countries">Countries</a></li>
+                <li><a href="../index.html#visatypes">Visa Types</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about visas and international travel</p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="section">
+        <div class="faq-container">
+            <!-- General Visa Questions -->
+            <h2 style="margin-bottom: 30px;">General Visa Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is a visa and why do I need one?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>A visa is an official document issued by a country's government that grants you permission to enter, stay, and potentially work or study in that country. It's a form of authorization that shows you've met the country's entry requirements and have a legitimate purpose for your visit.</p>
+                        <p>Most countries require citizens of other nations to obtain a visa before arrival, though some countries have visa exemption agreements or offer visas on arrival.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long does it take to get a visa?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>Visa processing times vary widely depending on:</p>
+                        <ul>
+                            <li>The specific country and visa type</li>
+                            <li>Your nationality and citizenship</li>
+                            <li>The season (peak travel seasons take longer)</li>
+                            <li>How completely you fill out the application</li>
+                            <li>Whether background checks are needed</li>
+                        </ul>
+                        <p>Processing times can range from a few days for tourist visas to several months for work or residency visas. Always apply well in advance of your travel date.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How much does a visa cost?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>Visa fees vary significantly based on:</p>
+                        <ul>
+                            <li>The destination country</li>
+                            <li>Type of visa (tourist, work, student, etc.)</li>
+                            <li>Duration of stay</li>
+                            <li>Number of entries (single or multiple)</li>
+                            <li>Your nationality</li>
+                        </ul>
+                        <p>Tourist visas can cost anywhere from free to $300+, while work visas can cost $500-$3,000+. Check the embassy website for your specific situation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I apply for a visa now if I'm traveling next month?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>Ideally, yes, but it depends on the visa type and destination. Here's the timeline recommendation:</p>
+                        <ul>
+                            <li><strong>Tourist visas:</strong> Apply 2-4 weeks in advance</li>
+                            <li><strong>Work visas:</strong> Apply 2-3 months in advance</li>
+                            <li><strong>Student visas:</strong> Apply 3-6 months in advance</li>
+                            <li><strong>Family visas:</strong> Apply 3-6 months in advance</li>
+                        </ul>
+                        <p>Some countries offer expedited processing for additional fees. Check with your embassy or consulate immediately if your travel date is approaching.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Visa Questions -->
+            <h2 style="margin-bottom: 30px; margin-top: 50px;">Work & Employment Visas</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do I need a job offer to get a work visa?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>This depends on the country and the specific work visa program:</p>
+                        <ul>
+                            <li><strong>Most work visas:</strong> Yes, you typically need a job offer from an employer</li>
+                            <li><strong>Points-based systems:</strong> Some countries (Canada, Australia) don't require a job offer upfront</li>
+                            <li><strong>Freelance visas:</strong> Some countries now offer visas for self-employed individuals</li>
+                            <li><strong>Digital Nomad visas:</strong> Usually don't require a traditional job offer</li>
+                        </ul>
+                        <p>Research the specific country's requirements before applying.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I change jobs while on a work visa?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>Job changes on work visas vary by country:</p>
+                        <ul>
+                            <li><strong>Employer-sponsored visas:</strong> Often require notification and permission</li>
+                            <li><strong>Points-based systems:</strong> Usually allow job changes more freely</li>
+                            <li><strong>Some countries:</strong> Require a new work visa for a different employer</li>
+                            <li><strong>Internal transfers:</strong> May be allowed within the same company</li>
+                        </ul>
+                        <p>Always check with immigration authorities before changing jobs to avoid visa violations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Student Visa Questions -->
+            <h2 style="margin-bottom: 30px; margin-top: 50px;">Student Visas</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What documents do I need for a student visa?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>Generally, you'll need:</p>
+                        <ul>
+                            <li>Valid passport (6+ months validity)</li>
+                            <li>Letter of acceptance from the school/university</li>
+                            <li>Proof of financial support (bank statements, sponsorship letter)</li>
+                            <li>Academic transcripts and qualifications</li>
+                            <li>English language proficiency test scores (IELTS, TOEFL, etc.)</li>
+                            <li>Medical examination results</li>
+                            <li>Police clearance certificate</li>
+                            <li>Completed visa application form</li>
+                            <li>Passport-sized photographs</li>
+                        </ul>
+                        <p>Requirements vary by country. Check with your destination country's embassy for specific requirements.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I work while studying on a student visa?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>Work permissions vary significantly by country:</p>
+                        <ul>
+                            <li><strong>USA:</strong> Limited work allowed on-campus (20 hours/week during school)</li>
+                            <li><strong>Canada:</strong> Can work up to 20 hours/week during school, full-time during breaks</li>
+                            <li><strong>Australia:</strong> Can work 20 hours/week during semester, unlimited during breaks</li>
+                            <li><strong>UK:</strong> Can work up to 20 hours/week during term time</li>
+                        </ul>
+                        <p>Post-graduation, many countries allow graduates to work for additional periods.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Travel & Visa Questions -->
+            <h2 style="margin-bottom: 30px; margin-top: 50px;">Travel & Logistics</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's the difference between a visa and an ESTA/eVisa?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p><strong>Traditional Visa:</strong></p>
+                        <ul>
+                            <li>Physical document in your passport</li>
+                            <li>Applied for at embassy/consulate</li>
+                            <li>Often requires in-person interviews</li>
+                            <li>Takes days/weeks to process</li>
+                        </ul>
+                        <p><strong>ESTA/eVisa (Electronic Authorization):</strong></p>
+                        <ul>
+                            <li>Digital authorization (no physical stamp)</li>
+                            <li>Applied online</li>
+                            <li>Usually approved within minutes/hours</li>
+                            <li>Valid for multiple trips</li>
+                        </ul>
+                        <p>Both grant you legal permission to travel, but eVisas are faster and easier for visa-exempt travelers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What should I do if my visa application is denied?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>If your visa is denied:</p>
+                        <ul>
+                            <li>Request the reason for denial</li>
+                            <li>Don't reapply immediately without addressing the issue</li>
+                            <li>Consider hiring an immigration lawyer</li>
+                            <li>Strengthen your application with additional documentation</li>
+                            <li>Wait an appropriate time before reapplying (usually 3-6 months)</li>
+                            <li>Try to fix the specific concerns mentioned in the rejection</li>
+                        </ul>
+                        <p>Common reasons include insufficient funds, lack of employment verification, or security concerns. Address these before reapplying.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Questions -->
+            <h2 style="margin-bottom: 30px; margin-top: 50px;">Financial & Money Matters</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How much money do I need to show for a tourist visa?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <div class="answer-content">
+                        <p>This varies widely:</p>
+                        <ul>
+                            <li><strong>Schengen countries:</strong> ~€90/day (total ~€2,000 for 20 days)</li>
+                            <li><strong>USA:</strong> No specific amount, but proof of funds is required</li>
+                            <li><strong>Canada:</strong> Varies by family size</li>
+                            <li><strong>Australia:</strong> No specific amount required</li>
+                            <li><strong>Asian countries:</strong> Usually $50-200/day of stay</li>
+                        </ul>
+                        <p>Have bank statements showing funds for your entire trip duration. Proof can include savings accounts, credit lines, or sponsor funds.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact & Help -->
+            <div style="background-color: var(--light-bg); padding: 40px; border-radius: 12px; text-align: center; margin-top: 50px;">
+                <h3>Didn't find your answer?</h3>
+                <p>Contact us for more information:</p>
+                <p style="margin-top: 15px;">
+                    <strong>Live Chat:</strong> Available on homepage<br>
+                    <strong>Phone:</strong> Coming soon
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your trusted source for comprehensive visa information and travel guidance.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Visa Guides</h4>
+                <ul>
+                    <li><a href="#">USA Visa</a></li>
+                    <li><a href="#">Canada Visa</a></li>
+                    <li><a href="#">UK Visa</a></li>
+                    <li><a href="#">Australia Visa</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Global Visa Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.closest('.faq-item');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

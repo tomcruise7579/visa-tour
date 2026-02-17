@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Visa Guide - Your Complete Visa Information Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-passport"></i>
+                <span>Global Visa Guide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#countries">Countries</a></li>
+                <li><a href="#visatypes">Visa Types</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Complete Global Visa Guide</h1>
+            <p>Find everything you need to know about visas, requirements, and travel tips for countries worldwide</p>
+            <input type="text" id="searchInput" class="search-box" placeholder="Search countries, visa types, requirements...">
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats">
+        <div class="stat-card">
+            <h3 id="countriesCount">195+</h3>
+            <p>Countries & Regions</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="visaTypesCount">50+</h3>
+            <p>Visa Types</p>
+        </div>
+        <div class="stat-card">
+            <h3 id="articlesCount">100+</h3>
+            <p>Travel Articles</p>
+        </div>
+    </section>
+
+    <!-- Visa Types Section -->
+    <section id="visatypes" class="section">
+        <div class="container">
+            <h2>Popular Visa Types</h2>
+            <div class="visa-types-grid">
+                <div class="card visa-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Work Visa</h3>
+                    <p>Information about work permits and employment visas for different countries</p>
+                </div>
+                <div class="card visa-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Student Visa</h3>
+                    <p>Complete guide to studying abroad and student visa requirements</p>
+                </div>
+                <div class="card visa-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Family Visa</h3>
+                    <p>Reunion and family sponsorship visa programs</p>
+                </div>
+                <div class="card visa-card">
+                    <i class="fas fa-suitcase-rolling"></i>
+                    <h3>Tourist Visa</h3>
+                    <p>Tourist and visitor visa information</p>
+                </div>
+                <div class="card visa-card">
+                    <i class="fas fa-crown"></i>
+                    <h3>Golden Visa</h3>
+                    <p>Investment and residency visa programs</p>
+                </div>
+                <div class="card visa-card">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Digital Nomad</h3>
+                    <p>Remote work and digital nomad visa options</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regions Section -->
+    <section id="countries" class="section alternate-bg">
+        <div class="container">
+            <h2>Explore by Region</h2>
+            <div class="regions-grid">
+                <a href="#" class="region-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Europe</h3>
+                    <p>Schengen, UK, EU visas</p>
+                </a>
+                <a href="#" class="region-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Asia</h3>
+                    <p>China, Japan, Thailand</p>
+                </a>
+                <a href="#" class="region-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Americas</h3>
+                    <p>USA, Canada, Mexico</p>
+                </a>
+                <a href="#" class="region-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Oceania</h3>
+                    <p>Australia, New Zealand</p>
+                </a>
+                <a href="#" class="region-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Africa</h3>
+                    <p>South Africa, Egypt</p>
+                </a>
+                <a href="#" class="region-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Middle East</h3>
+                    <p>UAE, Saudi Arabia, Israel</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Destinations -->
+    <section class="section">
+        <div class="container">
+            <h2>Top Visa Destinations</h2>
+            <div id="regionFilters" class="filter-bar" aria-label="Filter destinations by region">
+                <!-- Buttons populated by js/ui.js -->
+            </div>
+            <div id="topDestinations" class="destinations-grid">
+                <div class="destination-card">
+                    <div class="card-header">🇺🇸</div>
+                    <h3>United States</h3>
+                    <p class="visa-info">Tourist, Work, Student</p>
+                    <a href="#" class="btn-link">Learn More →</a>
+                </div>
+                <div class="destination-card">
+                    <div class="card-header">🇨🇦</div>
+                    <h3>Canada</h3>
+                    <p class="visa-info">Express Entry, Study, Tourist</p>
+                    <a href="#" class="btn-link">Learn More →</a>
+                </div>
+                <div class="destination-card">
+                    <div class="card-header">🇬🇧</div>
+                    <h3>United Kingdom</h3>
+                    <p class="visa-info">Skilled, Student, Visitor</p>
+                    <a href="#" class="btn-link">Learn More →</a>
+                </div>
+                <div class="destination-card">
+                    <div class="card-header">🇯🇵</div>
+                    <h3>Japan</h3>
+                    <p class="visa-info">Work, Study, Tourist</p>
+                    <a href="#" class="btn-link">Learn More →</a>
+                </div>
+                <div class="destination-card">
+                    <div class="card-header">🇦🇺</div>
+                    <h3>Australia</h3>
+                    <p class="visa-info">Skilled, Student, Tourist</p>
+                    <a href="#" class="btn-link">Learn More →</a>
+                </div>
+                <div class="destination-card">
+                    <div class="card-header">🇩🇪</div>
+                    <h3>Germany</h3>
+                    <p class="visa-info">Work, Study, Residence</p>
+                    <a href="#" class="btn-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section alternate-bg">
+        <div class="container">
+            <h2>Essential Resources</h2>
+            <div class="resources-grid">
+                <a href="pages/checklist.html" class="resource-card">
+                    <i class="fas fa-list-check"></i>
+                    <h3>Checklists</h3>
+                    <p>Document requirements and preparation checklists for visa applications</p>
+                </a>
+                <a href="pages/visa-costs.html" class="resource-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Visa Costs</h3>
+                    <p>Detailed information about visa fees and application costs</p>
+                </a>
+                <a href="pages/processing-times.html" class="resource-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Processing Times</h3>
+                    <p>Typical processing times for different visa categories</p>
+                </a>
+                <a href="pages/insurance.html" class="resource-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Insurance</h3>
+                    <p>Travel and health insurance information and recommendations</p>
+                </a>
+                <a href="pages/travel-tips.html" class="resource-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Travel Tips</h3>
+                    <p>Useful tips for international travel and moving abroad</p>
+                </a>
+                <a href="pages/faq.html" class="resource-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>FAQ</h3>
+                    <p>Frequently asked questions about visas and immigration</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section (Hidden by default) -->
+    <section id="searchResults" class="section" style="display: none;">
+        <div class="container">
+            <h2>Search Results</h2>
+            <div id="resultsContainer" class="destinations-grid"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your trusted source for comprehensive visa information and travel guidance.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="pages/terms.html">Terms & Conditions</a></li>
+                    <li><a href="pages/contact.html">Contact Us</a></li>
+                    <li><a href="pages/blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Countries</h4>
+                <ul>
+                    <li><a href="#">USA Visa</a></li>
+                    <li><a href="#">Canada Visa</a></li>
+                    <li><a href="#">UK Visa</a></li>
+                    <li><a href="#">Australia Visa</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Global Visa Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/blogs.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

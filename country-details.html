@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- 
+    ========================================
+    NEW FILE: Country Details Page
+    ========================================
+    
+    PURPOSE: 
+    Display comprehensive visa information for a specific country
+    Integrate blog content from visaguide.world
+    Provide detailed requirements, processing times, and professional tips
+    
+    FEATURES:
+    - Dynamic content loading based on URL parameter (?country=CountryName)
+    - Responsive two-column layout:
+      * Left: Country visa information and requirements
+      * Right: Blog posts, articles, tips, and resources
+    - Breadcrumb navigation for easy navigation back to home
+    - Blog post integration with featured article and related links
+    - Government website links for official information
+    - Mobile-optimized design (stacks to single column on small screens)
+    
+    LINKED SCRIPTS:
+    - ../css/style.css (main + country details styles)
+    - ../js/script.js (for menu toggle functionality)
+    - ../js/country-details.js (country data and page population)
+    
+    COUNTRIES SUPPORTED:
+    - United States, Canada, Japan, Germany
+    - United Kingdom, Australia, France
+    (More can be added by extending countryDatabase in country-details.js)
+    
+    PAGE SECTIONS:
+    1. Navigation bar with home link
+    2. Breadcrumb navigation trail
+    3. Country header with region badge
+    4. Visa Types & Requirements section
+    5. Key Information section
+    6. Common Requirements checklist
+    7. Processing Times & Costs section
+    8. Blog Sidebar:
+       - Featured blog post
+       - Related articles
+       - Pro tips box
+       - Useful links
+    9. Footer with copyright and links
+    
+    ========================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Country Visa Guide</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar - Links back to home page -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-passport"></i>
+                <span>Global Visa Guide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home">Home</a></li>
+                <li><a href="../index.html#countries">Countries</a></li>
+                <li><a href="../index.html#visatypes">Visa Types</a></li>
+                <li><a href="../index.html#resources">Resources</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <span id="breadcrumbCountry">Country</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container country-details-container">
+        <!-- Country Details Row -->
+        <div class="country-details-row">
+            <!-- Country Information -->
+            <div class="country-info-section">
+                <div class="country-header">
+                    <h1 id="countryName">Country Name</h1>
+                    <p id="countryRegion" class="region-badge">Region</p>
+                </div>
+
+                <!-- Visa Types -->
+                <section class="info-section">
+                    <h2><i class="fas fa-passport"></i> Visa Types & Requirements</h2>
+                    <div id="visaTypesContent" class="visa-list">
+                        <p>Loading visa information...</p>
+                    </div>
+                </section>
+
+                <!-- Key Information -->
+                <section class="info-section">
+                    <h2><i class="fas fa-info-circle"></i> Key Information</h2>
+                    <div id="keyInfoContent" class="info-grid">
+                        <p>Loading information...</p>
+                    </div>
+                </section>
+
+                <!-- Requirements -->
+                <section class="info-section">
+                    <h2><i class="fas fa-clipboard-list"></i> Common Requirements</h2>
+                    <div id="requirementsContent" class="requirements-list">
+                        <p>Loading requirements...</p>
+                    </div>
+                </section>
+
+                <!-- Processing Times -->
+                <section class="info-section">
+                    <h2><i class="fas fa-hourglass"></i> Processing Times & Costs</h2>
+                    <div id="processingContent" class="processing-info">
+                        <p>Loading processing information...</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Blog & Resources Sidebar -->
+            <div class="blog-sidebar">
+                <!-- Feature Blog Post -->
+                <div class="featured-blog">
+                    <h3><i class="fas fa-newspaper"></i> Blog & Insights</h3>
+                    <div id="featuredBlog" class="blog-card">
+                        <p>Loading blog content...</p>
+                    </div>
+                </div>
+
+                <!-- Related Blog Posts -->
+                <section class="related-posts">
+                    <h3><i class="fas fa-link"></i> Related Articles</h3>
+                    <div id="relatedPosts" class="posts-list">
+                        <p>Loading articles...</p>
+                    </div>
+                </section>
+
+                <!-- Quick Tips Box -->
+                <div class="tips-box">
+                    <h3><i class="fas fa-lightbulb"></i> Pro Tips</h3>
+                    <ul id="tipsContent">
+                        <li>Visit official government website</li>
+                        <li>Check visa validity periods</li>
+                        <li>Prepare required documents early</li>
+                        <li>Book appointment in advance</li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links -->
+                <div class="resources-box">
+                    <h3><i class="fas fa-link"></i> Useful Links</h3>
+                    <ul id="linksContent" class="links-list">
+                        <li><a href="https://visaguide.world" target="_blank">Visa Guide World <i class="fas fa-external-link-alt"></i></a></li>
+                        <li><a href="#" target="_blank" id="govLink">Official Government Site <i class="fas fa-external-link-alt"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Visa Guide</h4>
+                    <p>Your comprehensive resource for visa information worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../pages/checklist.html">Visa Checklist</a></li>
+                        <li><a href="../pages/faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Disclaimer</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Global Visa Guide. All rights reserved. | Data sourced from <a href="https://visaguide.world" target="_blank">visaguide.world</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/country-details.js"></script>
+</body>
+</html>

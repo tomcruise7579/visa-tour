@@ -1,0 +1,1038 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1e40af;
+    --secondary-color: #0f766e;
+    --accent-color: #dc2626;
+    --light-bg: #f3f4f6;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --border-color: #e5e7eb;
+    --success-color: #10b981;
+}
+
+/* UI Enhancements */
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0 30px;
+}
+.filter-btn {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--text-dark);
+    font-weight: 600;
+    transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+.filter-btn:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+.filter-btn.active { background: linear-gradient(90deg,var(--primary-color),var(--secondary-color)); color: white; border-color: transparent; }
+
+/* Reveal animation for cards */
+.reveal { opacity: 0; transform: translateY(16px) scale(0.995); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.2,.8,.2,1); }
+.reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
+
+/* Decorative hover tilt for destination cards */
+.destination-card { transform-origin: center; will-change: transform; }
+.destination-card .card-header { transition: transform 0.35s ease; }
+.destination-card:hover .card-header { transform: translateY(-6px) scale(1.03); }
+
+/* Animated stat counter style */
+.stat-card h3 { transition: all 0.6s ease; }
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    /* subtle gradient background for depth */
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 50%, #ffffff 100%);
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.logo i {
+    font-size: 28px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.95;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-box::placeholder {
+    color: var(--text-light);
+}
+
+.search-box:focus {
+    outline: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Stats Section */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+/* Section Styles */
+.section {
+    padding: 60px 20px;
+}
+
+.alternate-bg {
+    background-color: var(--light-bg);
+}
+
+.section h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+/* Card Styles */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Visa Types Grid */
+.visa-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.visa-card {
+    text-align: center;
+}
+
+.visa-card i {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.visa-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.visa-card p {
+    color: var(--text-light);
+}
+
+/* Regions Grid */
+.regions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.region-card {
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.region-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.region-card i {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.region-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.region-card p {
+    color: var(--text-light);
+}
+
+/* Destinations Grid */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.destination-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    font-size: 42px;
+    padding: 0;
+    height: 120px;
+    text-align: center;
+    background-color: var(--light-bg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+.card-header::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.35));
+    border-radius: 0;
+}
+.card-header > * { position: relative; z-index: 2; }
+
+.destination-card h3 {
+    padding: 20px 20px 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.visa-info {
+    padding: 0 20px 15px;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: var(--light-bg);
+}
+
+/* Resources Grid */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.resource-card {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.resource-card i {
+    font-size: 48px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.resource-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.resource-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background-color: #1f2937;
+    color: white;
+    padding: 60px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    color: #d1d5db;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    padding-top: 20px;
+    text-align: center;
+    color: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .nav-menu {
+        display: none;
+        gap: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .visa-types-grid,
+    .regions-grid,
+    .destinations-grid,
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .stat-card h3 {
+        font-size: 28px;
+    }
+
+    .search-box {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #0d5555;
+}
+
+/* Loading and Empty States */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state i {
+    font-size: 64px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: var(--text-light);
+}
+
+/* CHANGE: Country Details Page Styles
+   New CSS classes for the country-details.html page
+   Includes layout, blog sidebar, visa information display, and responsive design
+*/
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container for Country Details */
+.country-details-container {
+    padding: 40px 20px;
+}
+
+/* Grid Layout: Left column for country info, right column for blog sidebar */
+.country-details-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+/* Left column - Country information sections */
+.country-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Country header with name and region badge */
+.country-header {
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 20px;
+}
+
+.country-header h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+/* Styled badge for country region */
+.region-badge {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Information sections styling */
+.info-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.info-section h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--light-bg);
+    padding-bottom: 15px;
+}
+
+.info-section h2 i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+/* Visa List - displays different visa types for the country */
+.visa-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.visa-item {
+    padding: 20px;
+    background-color: var(--light-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+}
+
+.visa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.visa-header h4 {
+    font-size: 18px;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+/* Badge showing processing time */
+.processing-time {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.visa-description {
+    color: var(--text-light);
+    margin: 10px 0;
+}
+
+.visa-cost {
+    color: var(--accent-color);
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Info Grid - displays key information points */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    padding: 15px;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Requirements Checklist */
+.requirements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.requirement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+}
+
+.requirement-item i {
+    color: var(--success-color);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.requirement-item span {
+    color: var(--text-dark);
+}
+
+/* Processing Information - fees and timelines */
+.processing-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.processing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.processing-item {
+    padding: 20px;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.processing-item label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.processing-item p {
+    font-size: 18px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* CHANGE: Blog Sidebar - right column with blog posts and resources */
+.blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* All sidebar boxes have consistent styling */
+.featured-blog,
+.related-posts,
+.tips-box,
+.resources-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.featured-blog h3,
+.related-posts h3,
+.tips-box h3,
+.resources-box h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--light-bg);
+    color: var(--text-dark);
+}
+
+.featured-blog h3 i,
+.related-posts h3 i,
+.tips-box h3 i,
+.resources-box h3 i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+/* Featured Blog Post - main article content from visaguide.world */
+.blog-card {
+    background-color: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.blog-post h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+/* Blog post metadata (date, author) */
+.blog-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.blog-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.blog-excerpt {
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.blog-content {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: var(--text-dark);
+}
+
+/* Related Blog Articles - sidebar section with linked articles */
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.related-post-item {
+    padding: 15px;
+    background-color: var(--light-bg);
+    border-radius: 8px;
+    border-left: 3px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.related-post-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.related-post-item h5 {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.post-excerpt {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.related-post-item small {
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+/* Pro Tips Box - helpful suggestions for visa applicants */
+.tips-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-box li {
+    padding: 12px 0;
+    padding-left: 25px;
+    color: var(--text-dark);
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+}
+
+.tips-box li:last-child {
+    border-bottom: none;
+}
+
+.tips-box li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+/* Useful Links Box - external resources and government sites */
+.links-list {
+    list-style: none;
+    padding: 0;
+}
+
+.links-list li {
+    margin-bottom: 12px;
+}
+
+.links-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.links-list a:hover {
+    color: var(--text-dark);
+}
+
+.links-list i {
+    font-size: 12px;
+}
+
+/* CHANGE: Responsive Design for Country Details Page */
+@media (max-width: 1024px) {
+    /* Stack layout on tablet: single column */
+    .country-details-row {
+        grid-template-columns: 1fr;
+    }
+
+    .country-header h1 {
+        font-size: 36px;
+    }
+
+    .processing-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile-optimized layout */
+    .country-details-container {
+        padding: 20px;
+    }
+
+    .country-header h1 {
+        font-size: 28px;
+    }
+
+    .info-section {
+        padding: 20px;
+    }
+
+    .info-section h2 {
+        font-size: 20px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .visa-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .blog-sidebar {
+        gap: 20px;
+    }
+
+    .featured-blog,
+    .related-posts,
+    .tips-box,
+    .resources-box {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Requirements Checklist - Global Visa Guide</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .checklist-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .checklist-section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .checklist-section h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .checklist-item:hover {
+            background-color: var(--light-bg);
+        }
+        
+        .checkbox {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            margin-top: 2px;
+            cursor: pointer;
+            accent-color: var(--primary-color);
+        }
+        
+        .checklist-item.checked {
+            opacity: 0.6;
+        }
+        
+        .checklist-item.checked label {
+            text-decoration: line-through;
+            color: var(--text-light);
+        }
+        
+        .checklist-item label {
+            cursor: pointer;
+            flex: 1;
+            color: var(--text-dark);
+        }
+        
+        .download-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            background-color: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .visa-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .visa-option {
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .visa-option:hover {
+            border-color: var(--primary-color);
+            background-color: var(--light-bg);
+        }
+        
+        .visa-option.active {
+            border-color: var(--primary-color);
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-passport"></i>
+                <span>Global Visa Guide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#countries">Countries</a></li>
+                <li><a href="../index.html#visatypes">Visa Types</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Visa Requirements Checklist</h1>
+            <p>Complete checklists for different visa types and countries</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="section">
+        <div class="checklist-container">
+            <!-- Visa Type Selector -->
+            <div style="background-color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);">
+                <h3 style="margin-bottom: 20px;">Select Visa Type</h3>
+                <div class="visa-selector">
+                    <div class="visa-option active" onclick="selectVisaType('tourist')">
+                        <i class="fas fa-suitcase-rolling" style="display: block; font-size: 24px; margin-bottom: 10px;"></i>
+                        Tourist Visa
+                    </div>
+                    <div class="visa-option" onclick="selectVisaType('work')">
+                        <i class="fas fa-briefcase" style="display: block; font-size: 24px; margin-bottom: 10px;"></i>
+                        Work Visa
+                    </div>
+                    <div class="visa-option" onclick="selectVisaType('student')">
+                        <i class="fas fa-graduation-cap" style="display: block; font-size: 24px; margin-bottom: 10px;"></i>
+                        Student Visa
+                    </div>
+                    <div class="visa-option" onclick="selectVisaType('family')">
+                        <i class="fas fa-heart" style="display: block; font-size: 24px; margin-bottom: 10px;"></i>
+                        Family Visa
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tourist Visa Checklist -->
+            <div id="tourist-checklist" class="checklist-section">
+                <h3><i class="fas fa-suitcase-rolling"></i> Tourist Visa Checklist</h3>
+                
+                <h4 style="margin-top: 20px; margin-bottom: 15px; color: var(--primary-color);">Essential Documents</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" id="item1" class="checkbox">
+                    <label for="item1">Valid passport (6+ months validity remaining)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Completed visa application form</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Passport-sized photographs</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Visa application fee (varies by country)</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Travel Documents</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Flight reservations or itinerary</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Hotel reservations or accommodation proof</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Return flight confirmation</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Financial Documents</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Bank statements (3-6 months average)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Proof of income or employment letter</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Credit card statements (showing funds)</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Personal Information</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Proof of residence (utility bill, lease)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Travel insurance (recommended)</label>
+                </div>
+            </div>
+
+            <!-- Work Visa Checklist -->
+            <div id="work-checklist" class="checklist-section" style="display: none;">
+                <h3><i class="fas fa-briefcase"></i> Work Visa Checklist</h3>
+                
+                <h4 style="margin-top: 20px; margin-bottom: 15px; color: var(--primary-color);">Essential Documents</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Valid passport (12+ months validity)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Completed work visa application</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Job offer letter from employer</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Employment contract</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Educational & Professional</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Educational certificates and diplomas</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Professional qualifications and licenses</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>CV/Resume</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Work experience letters</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Health & Security</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Medical examination report</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Police clearance certificate</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Vaccination records</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Financial & Immigration</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Bank statements and proof of funds</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Proof of accommodation in destination</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Passport copies (notarized)</label>
+                </div>
+            </div>
+
+            <!-- Student Visa Checklist -->
+            <div id="student-checklist" class="checklist-section" style="display: none;">
+                <h3><i class="fas fa-graduation-cap"></i> Student Visa Checklist</h3>
+                
+                <h4 style="margin-top: 20px; margin-bottom: 15px; color: var(--primary-color);">Essential Documents</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Valid passport (12+ months validity)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Completed student visa application</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Letter of acceptance from educational institution</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Academic Documents</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Academic transcript and grades</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Secondary school certificate</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Language proficiency test (IELTS, TOEFL, etc.)</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Financial Documents</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Proof of financial support (full amount for tuition + living costs)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Bank statements (sponsor's account)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Sponsor affidavit (if applicable)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Evidence of loan approval (if financing studies)</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Health & Security</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Medical examination report</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Police clearance certificate</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Health insurance proof</label>
+                </div>
+            </div>
+
+            <!-- Family Visa Checklist -->
+            <div id="family-checklist" class="checklist-section" style="display: none;">
+                <h3><i class="fas fa-heart"></i> Family Visa Checklist</h3>
+                
+                <h4 style="margin-top: 20px; margin-bottom: 15px; color: var(--primary-color);">Essential Documents</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Valid passports for all family members</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Completed family visa application forms</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Sponsorship letter from resident/citizen</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Relationship Documents</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Marriage certificate (if applicable)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Birth certificates for children</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Divorce/death certificates (if applicable)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Proof of family relationship</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Financial Documents</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Sponsor's employment letter</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Sponsor's income documents (last 2 years)</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Sponsor's bank statements</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Affidavit of support from sponsor</label>
+                </div>
+                
+                <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Health & Security</h4>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Medical examination reports for all members</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" class="checkbox">
+                    <label>Police clearance certificates</label>
+                </div>
+            </div>
+
+            <!-- Download Section -->
+            <div class="download-section">
+                <h3>Need a Printable Version?</h3>
+                <p>Download our comprehensive visa checklists and keep them handy during your application process.</p>
+                <button class="download-btn" onclick="downloadChecklist()">
+                    <i class="fas fa-download"></i> Download PDF Checklist
+                </button>
+                <button class="download-btn" onclick="printChecklist()" style="margin-left: 10px;">
+                    <i class="fas fa-print"></i> Print Checklist
+                </button>
+            </div>
+
+            <!-- Pro Tips -->
+            <div style="background-color: var(--light-bg); padding: 30px; border-radius: 12px; margin-top: 30px;">
+                <h3 style="margin-bottom: 20px;"><i class="fas fa-lightbulb"></i> Pro Tips for Your Application</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px; padding: 12px; background-color: white; border-radius: 8px;">
+                        <strong>✓ Start Early:</strong> Don't wait until the last minute. Begin gathering documents 2-3 months before your travel date.
+                    </li>
+                    <li style="margin-bottom: 15px; padding: 12px; background-color: white; border-radius: 8px;">
+                        <strong>✓ Make Copies:</strong> Keep copies of all documents. Originals might not be returned immediately.
+                    </li>
+                    <li style="margin-bottom: 15px; padding: 12px; background-color: white; border-radius: 8px;">
+                        <strong>✓ Verify Requirements:</strong> Check the specific requirements with the embassy or consulate for your country.
+                    </li>
+                    <li style="margin-bottom: 15px; padding: 12px; background-color: white; border-radius: 8px;">
+                        <strong>✓ Original Documents:</strong> Ensure all documents are authentic and properly certified where required.
+                    </li>
+                    <li style="margin-bottom: 15px; padding: 12px; background-color: white; border-radius: 8px;">
+                        <strong>✓ Follow Instructions:</strong> Strictly follow the embassy's instructions. Missing items can delay processing.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your trusted source for comprehensive visa information and travel guidance.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Visa Guides</h4>
+                <ul>
+                    <li><a href="#">USA Visa</a></li>
+                    <li><a href="#">Canada Visa</a></li>
+                    <li><a href="#">UK Visa</a></li>
+                    <li><a href="#">Australia Visa</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Global Visa Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Visa type selector
+        function selectVisaType(type) {
+            // Hide all checklists
+            document.getElementById('tourist-checklist').style.display = 'none';
+            document.getElementById('work-checklist').style.display = 'none';
+            document.getElementById('student-checklist').style.display = 'none';
+            document.getElementById('family-checklist').style.display = 'none';
+
+            // Show selected checklist
+            document.getElementById(type + '-checklist').style.display = 'block';
+
+            // Update active button
+            document.querySelectorAll('.visa-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            event.target.closest('.visa-option').classList.add('active');
+
+            // Scroll to checklist
+            document.getElementById(type + '-checklist').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Checkbox tracking
+        document.querySelectorAll('.checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                this.closest('.checklist-item').classList.toggle('checked');
+            });
+        });
+
+        // Download checklist
+        function downloadChecklist() {
+            alert('PDF download feature coming soon! For now, use the print function to save as PDF.');
+        }
+
+        // Print checklist
+        function printChecklist() {
+            window.print();
+        }
+
+        // Mobile menu
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>
